@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Jacquarda+Bastarda+9&family=Macondo&family=Pirata+One&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=UnifrakturCook&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container" id="cont">
+    <main id="corps">
+      <h1 id="titre" class="bienvenue">Bienvenue sur mon Portfolio !</h1>
+      <div class="box" id="box">
+        <p id="p1">Veuillez choisir un thème :</p>
+        <div id="choix">
+          <input type="radio" class="boutonRadio" name="theme" id="themeClair" checked><label for="themeClair"><p id="pclair">Thème clair</p></label>
+          <span id="espace"></span>
+          <input type="radio" class="boutonRadio" name="theme" id="themeSombre"><label for="themeSombre"><p id="psombre">Thème sombre</p></label>
+        </div>
+        <p id="p2">(Vous pourrez changer de thème à tout moment.)</p>
+      </div>
+      <button class="boutonRetro" id="entrer">Entrer</button>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('entrer').addEventListener('click', function(event) {
+      event.preventDefault(); // Empêche la redirection immédiate
+
+      var beep = new Audio();
+      var themeClairChecked = document.getElementById('themeClair').checked;
+
+      if (themeClairChecked) {
+        beep.src = "../audios/4.wav";
+        localStorage.setItem('theme', 'clair');
+      } else {
+        beep.src = "../audios/5.wav";
+        localStorage.setItem('theme', 'sombre');
+      }
+
+      beep.play();
+
+      // Attendre la fin du son avant de rediriger
+      beep.onended = function() {
+        window.location.href = "../LoadingPage/index.html";
+      };
+    });
+  </script>
+  <script src="./main.js"></script>
+</body>
+</html>

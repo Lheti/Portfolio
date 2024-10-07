@@ -1,0 +1,135 @@
+:root {
+  --poussin: #fff7b0;
+}
+
+.gif {
+  width: 95px;
+  height: 112px;
+  background-image: url('../images/518.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.dark_gif {
+  width: 74px;
+  height: 100px;
+  background-image: url('../images/link-zelda.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.chargement {
+  color: var(--lilas);
+  font-family: var(--Fraunces);
+  font-size: 3em;
+}
+
+.dark_chargement {
+  color: var(--vertclair);
+  font-family: var(--Pirata);
+  font-size: 3em;
+}
+
+
+/***** Barre de chargement *****/
+.loading-bar {
+  display: flex;
+  height: 20px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: inset 0px 0px 0px 3px var(--poussin);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.dark_loading-bar {
+  display: flex;
+  height: 20px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: inset 0px 0px 0px 3px var(--vertclair);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background: var(--poussin);
+  animation: progress-animation 12s ease-in-out;
+}
+
+.dark_progress-bar {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background: var(--vert);
+  animation: progress-animation 12s ease-in-out;
+}
+
+@keyframes progress-animation {
+  0% {width: 0%;}
+  100% {width: 100%;}
+}
+
+
+
+
+/***** Défilement des phrases *****/
+
+.slider {
+  width: 425px;
+  height: 50px;
+  overflow: hidden;
+  margin-top: -75px;
+}
+
+.slidercontent {
+  width: 2550px; /* 6 phrases de 425px */
+  height: 50px;
+  animation: slider 14s infinite linear; /* Ajusté pour 6 phrases */
+  position: relative;
+}
+
+@keyframes slider {
+  0% { right: 0px; }       /* 1ère phrase visible */
+  13.3% { right: 0px; }    /* Pause sur 1ère phrase */
+  
+  16.6% { right: 425px; }  /* Transition vers 2ème phrase */
+  30% { right: 425px; }    /* Pause sur 2ème phrase */
+  
+  33.3% { right: 850px; }  /* Transition vers 3ème phrase */
+  46.6% { right: 850px; }  /* Pause sur 3ème phrase */
+  
+  50% { right: 1275px; }   /* Transition vers 4ème phrase */
+  63.3% { right: 1275px; } /* Pause sur 4ème phrase */
+  
+  66.6% { right: 1700px; } /* Transition vers 5ème phrase */
+  80% { right: 1700px; }   /* Pause sur 5ème phrase */
+  
+  83.3% { right: 2125px; } /* Transition vers 6ème phrase */
+  96.6% { right: 2125px; } /* Pause sur 6ème phrase */
+  
+  100% { right: 2550px; }  /* Retour à la position initiale */
+}
+
+.phrases {
+  font-family: var(--Fraunces);
+  color: var(--rose);
+  font-size: 1.3em;
+  line-height: 50px;
+  display: inline-block;
+  width: 425px;
+  text-align: center;
+}
+
+.dark_phrases {
+  font-family: var(--Pirata);
+  color: var(--vert);
+  font-size: 1.3em;
+  line-height: 50px;
+  display: inline-block;
+  width: 425px;
+  text-align: center;
+}
