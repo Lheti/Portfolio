@@ -223,7 +223,7 @@ input[type="radio"].dark_boutonRadio:checked + label::after {
 
 .boutonRetro {
   position: relative;
-  border-image: url(../images/frame-hd.png);
+  border-image: url(./images/frame-hd.png);
   border-image-repeat: initial;
   padding: 4px 18px;
   border-image-slice: 12;
@@ -240,7 +240,7 @@ input[type="radio"].dark_boutonRadio:checked + label::after {
 
 .dark_boutonRetro {
   position: relative;
-  border-image: url(../images/dark_frame-hd.png);
+  border-image: url(./images/dark_frame-hd.png);
   border-image-repeat: initial;
   padding: 4px 18px;
   border-image-slice: 12;
